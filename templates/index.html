@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>
+    Face detection 
+</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Live Streaming</h1>
+    <div class="video-container">
+        <img src="{{url_for('video')}}" width="50%" />
+    </div>
+</div>
+{% endblock %}

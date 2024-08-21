@@ -52,10 +52,3 @@ def extract_num(path):
                 cv2.putText(img,text_,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.9,(255,255,255),2)
         cv2.imwrite(RESULTS+filename,img)
 
-print("-----------Image Extration-----------")
-print("-------------------------------------")
-print("-----Initializing Image Extration----")
-#calling 
-extract_num(path=PATH)
-print("------Image Extration completed------")
-

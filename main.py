@@ -1,6 +1,6 @@
 import cv2
 import os
-
+from Character_reading import *
 thres = 0.45 # Threshold to detect object
 
 #capturing video
@@ -28,7 +28,8 @@ net.setInputScale(1.0/ 127.5)
 net.setInputMean((127.5, 127.5, 127.5))
 net.setInputSwapRB(True)
 
-while True:
+def Plate():
+  while True:
     #reading frames
     success,img = cap.read()
 
@@ -65,6 +66,7 @@ while True:
                     # Save the image
                         cv2.imwrite(img_name, frame)
                         print(f"Image saved successfully: {img_name}")
+                        extract_num(path=PATH)
                     else:
                         print("Failed to capture the image!")                                        
                 else:
