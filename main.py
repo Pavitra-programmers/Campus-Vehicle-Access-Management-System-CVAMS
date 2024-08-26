@@ -79,3 +79,7 @@ def Plate():
     #cleaning up
     cv2.imshow("Output",img)
     cv2.waitKey(1)
+    
+Plate()
+cap.release()
+cv2.destroyAllWindows()
