@@ -4,16 +4,13 @@ from scipy import ndimage
 import numpy as np
 import easyocr
 
+
 cascade = cv2.CascadeClassifier("haarcascade_russian_plate_number.xml")
 PATH = "database/"
 
-RESULTS = "result/"
+RESULTS = "static/result/"
 if not os.path.exists(RESULTS):
     os.makedirs(RESULTS)
-
-CH = "ready_to_detect/"
-if not os.path.exists(CH):
-    os.makedirs(CH)
 
 def extract_num(path):
     for filename in os.listdir(path):
@@ -38,8 +35,6 @@ def extract_num(path):
                 plate=cv2.dilate(plate,kernel,iterations=1)
                 plate=cv2.erode(plate,kernel,iterations=1)
                 plate_gray=cv2.cvtColor(plate,cv2.COLOR_BGR2GRAY)
-                # (thresh,plate)=cv2.threshold(plate_gray,127,255,cv2.THRESH_BINARY)
-                cv2.imwrite(CH+filename,plate_gray)
                 #reading the text
             reader = easyocr.Reader(['en'],gpu=False)
             text = reader.readtext(plate)

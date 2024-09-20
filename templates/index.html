@@ -7,9 +7,97 @@
 {% endblock %}
 {% block body %}
 <div class="container">
-    <h1>Live Streaming</h1>
-    <div class="video-container">
-        <img src="{{url_for('video')}}" width="50%" />
+
+    <div class="search">
+        <input type="text" class="input" placeholder="Search">
+        <button class="btn">Search</button>
+    </div>
+
+    <nav class="active" id="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Works</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="icon" id="toggle">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+        </button>
+    </nav>
+
+</div>
+
+<div class="content">
+
+    <div class="sidebyside">
+        <!-- Two side by side sections -->
+        
+        <div class="sec1">
+            
+            <h1>Heading</h1>
+                <div class="sub">
+                    Subtitle
+                </div>            
+            
+            <div class="img1">
+                {% if not images %}
+                    <img src="{{ url_for('static', filename="image-not-found-scaled-1150x647.png") }}" >
+                {% else %}
+                    <img src="{{ url_for('static', filename=image) }}" >
+                {% endif %}
+            </div>
+
+            <!-- textboxes -->
+            <div class="textboxcontainer">
+                <div class="left">
+                    <div class="textbox">Text</div>
+                    <div class="textbox">Text</div>
+                </div>
+                <div class="right">
+                    <div class="textbox">Text</div>
+                    <div class="textbox">Text</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sec2">
+            <div class="img2">
+                <img src="{{url_for('video')}}" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="foot">
+
+        <div class="footer">
+            <section>Team: </section>
+            <section>Members: Amrit Lal Paswan, Kritensh Kumar, Rishika Kumari, Nitish Kumar</section>
+        </div>
+
+        <div class="social">
+            <ul>
+                <li><a href="">Unstop</a></li>
+                <li><a href="">LinkedIn</a></li>
+                <li><a href="">GitHub</a></li>
+            </ul>
+        </div>
+
+        <div class="contact">
+            <ul>
+                <li>Phone: </li>
+                <li>E-mail: </li>
+            </ul>
+        </div>
+
+        <!-- Kya likhu ispe? -->
+        <div class="copyright">
+            <section>&#169; All right reserved.</section>
+        </div>
+
     </div>
 </div>
+
 {% endblock %}
