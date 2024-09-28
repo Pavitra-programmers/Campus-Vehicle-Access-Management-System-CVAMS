@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>
-    Face detection 
-</title>
+<title>Vehicle Detection</title>
 {% endblock %}
+
 {% block body %}
 <div class="container">
 
@@ -31,40 +30,34 @@
 <div class="content">
 
     <div class="sidebyside">
-        <!-- Two side by side sections -->
-        
+
         <div class="sec1">
+            <h1>Detected Vehicle</h1>
             
-            <h1>Heading</h1>
-                <div class="sub">
-                    Subtitle
-                </div>            
+            <div class="sub">Current Vehicle Image</div>
             
             <div class="img1">
-                {% if not images %}
-                    <img src="{{ url_for('static', filename="image-not-found-scaled-1150x647.png") }}" >
-                {% else %}
-                    <img src="{{ url_for('static', filename=image) }}" >
-                {% endif %}
-            </div>
-
-            <!-- textboxes -->
+            
+                    <img id="latest-image" 
+                         src="{{ url_for('static', filename='image-not-found-scaled-1150x647.png') }}" 
+                         alt="Live Vehicle Feed" 
+                         data-fallback-url="{{ url_for('static', filename='image-not-found-scaled-1150x647.png') }}">
+                </div>
+                
+            
+            
+            <!-- Display latest number plates in textboxcontainer -->
             <div class="textboxcontainer">
-                <div class="left">
-                    <div class="textbox">Text</div>
-                    <div class="textbox">Text</div>
-                </div>
-                <div class="right">
-                    <div class="textbox">Text</div>
-                    <div class="textbox">Text</div>
-                </div>
-            </div>
 
+            </div>
+            
+            
         </div>
 
         <div class="sec2">
+            <!-- Display the live video feed -->
             <div class="img2">
-                <img src="{{url_for('video')}}" />
+                <img src="{{ url_for('video') }}" alt="Live Feed">
             </div>
         </div>
 
@@ -92,9 +85,8 @@
             </ul>
         </div>
 
-        <!-- Kya likhu ispe? -->
         <div class="copyright">
-            <section>&#169; All right reserved.</section>
+            <section>&#169; All rights reserved.</section>
         </div>
 
     </div>

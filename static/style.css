@@ -188,10 +188,10 @@ h1{
 .img1{
     height: auto;
     width: auto;
-    max-width: 45vw;
-    max-height: 35vh;
+    width: 45vw;
+    height: 35vh;
 }
-.img1 img{
+#latest-image{
     box-shadow: 0 0 0 3px rgba(3, 144, 252, 0.871);
     max-height: 35vh;
     max-width: 45vw;
@@ -333,11 +333,11 @@ h1{
     }
     .textboxcontainer{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         height: auto;
-        width: 90vw;
+        width: 60vw;
     }
     .textbox{
         margin-top: 2vh;
