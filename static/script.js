@@ -1,17 +1,10 @@
-// nav menu
+// HUD menu toggle (cosmetic)
 const toggle = document.getElementById('toggle')
-const nav = document.getElementById('nav')
-toggle.addEventListener('click', () => nav.classList.toggle('active'))
-
-
-// search button
-const search = document.querySelector('.search')
-const btn = document.querySelector('.btn')
-const input = document.querySelector('.input')
-btn.addEventListener('click', () => {
-    search.classList.toggle('active')
-    input.focus()
-})
+if (toggle) {
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active')
+    })
+}
 
 function updateImage() {
     const imageElement = document.getElementById('latest-image');

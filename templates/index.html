@@ -5,91 +5,45 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-
-    <div class="search">
-        <input type="text" class="input" placeholder="Search">
-        <button class="btn">Search</button>
+<div class="hud">
+    <div class="hud-top">
+        <div class="hud-logo">CVAMS</div>
+        <div class="hud-subtitle">Campus Vehicle Access Management</div>
+        <div class="hud-search">
+            <input type="text" class="hud-input" placeholder="Search">
+            <button class="hud-btn">SEARCH</button>
+            <button class="hud-menu" id="toggle"><span></span><span></span><span></span></button>
+        </div>
     </div>
 
-    <nav class="active" id="nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <button class="icon" id="toggle">
-            <div class="line line1"></div>
-            <div class="line line2"></div>
-        </button>
-    </nav>
-
-</div>
-
-<div class="content">
-
-    <div class="sidebyside">
-
-        <div class="sec1">
-            <h1>Detected Vehicle</h1>
-            
-            <div class="sub">Current Vehicle Image</div>
-            
-            <div class="img1">
-            
+    <div class="hud-grid">
+        <section class="hud-panel left">
+            <header class="panel-title">DETECTED VEHICLE</header>
+            <div class="panel-body">
+                <div class="panel-screen">
                     <img id="latest-image" 
                          src="{{ url_for('static', filename='image-not-found-scaled-1150x647.png') }}" 
-                         alt="Live Vehicle Feed" 
+                         alt="Detected Vehicle" 
                          data-fallback-url="{{ url_for('static', filename='image-not-found-scaled-1150x647.png') }}">
                 </div>
-                
-            
-            
-            <!-- Display latest number plates in textboxcontainer -->
-            <div class="textboxcontainer">
-
+                <div class="panel-subtitle">Recent Detections</div>
+                <div class="textboxcontainer"></div>
             </div>
-            
-            
-        </div>
+        </section>
 
-        <div class="sec2">
-            <!-- Display the live video feed -->
-            <div class="img2">
-                <img src="{{ url_for('video') }}" alt="Live Feed">
+        <section class="hud-panel right">
+            <header class="panel-title">LIVE VIDEO FEED</header>
+            <div class="panel-body">
+                <div class="panel-screen">
+                    <img src="{{ url_for('video') }}" alt="Live Feed">
+                </div>
             </div>
-        </div>
-
+        </section>
     </div>
 
-    <div class="foot">
-
-        <div class="footer">
-            <section>Team: </section>
-            <section>Members: Amrit Lal Paswan, Kritensh Kumar, Rishika Kumari, Nitish Kumar</section>
-        </div>
-
-        <div class="social">
-            <ul>
-                <li><a href="">Unstop</a></li>
-                <li><a href="">LinkedIn</a></li>
-                <li><a href="">GitHub</a></li>
-            </ul>
-        </div>
-
-        <div class="contact">
-            <ul>
-                <li>Phone: </li>
-                <li>E-mail: </li>
-            </ul>
-        </div>
-
-        <div class="copyright">
-            <section>&#169; All rights reserved.</section>
-        </div>
-
-    </div>
+    <footer class="hud-footer">
+        <div class="footer-col">Team: Amrit Lal Paswan, Kritensh Kumar, Rishika Kumari, Nitish Kumar</div>
+        <div class="footer-col">© All rights reserved.</div>
+    </footer>
 </div>
-
 {% endblock %}
