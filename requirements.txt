@@ -3,6 +3,4 @@ Gunicorn
 opencv-python
 numpy
 scipy
-torch 
-torchvision 
 easyocr
